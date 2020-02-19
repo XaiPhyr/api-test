@@ -1,9 +1,13 @@
 
-function get_id(id) {
+function preview(id) {
     window.open(
-        '?page=add-product&id=' + id,
+        '?page=preview&id=' + id,
         '_blank'
     )
+}
+
+function edit(id) {
+    window.location.href = '?page=add-product&id=' + id
 }
 
 function openNav() {

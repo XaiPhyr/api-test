@@ -6,6 +6,11 @@ switch ($_GET['page']) {
         $index->index();
         break;
 
+    case 'preview':
+        include("controllers/index.php");
+        $index->preview();
+        break;
+
     case 'add-product':
         include("controllers/manage.php");
         $manage->add_product();
