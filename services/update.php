@@ -9,7 +9,7 @@ class UpdateAPI
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "http://localhost/api/product/update.php",
+            CURLOPT_URL => "http://rdapi.herokuapp.com/product/update.php",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
