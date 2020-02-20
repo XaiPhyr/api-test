@@ -3,6 +3,7 @@ include("models/api.php");
 $id = $_GET['id'];
 
 $data = $api->get_single_product($id);
+$categories = $api->get_categories();
 ?>
 
 <div class="container">
@@ -31,9 +32,17 @@ $data = $api->get_single_product($id);
                     <div class="form-group col-3 col-md-3">
                         <label for="">Category</label>
                         <?php if (empty($id)) { ?>
-                            <input type="text" name="category" id="category" class="form-control">
+                            <select name="category" id="" class="form-control">
+                                <?php foreach ($categories as $category) { ?>
+                                    <option value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
+                                <?php } ?>
+                            </select>
                         <?php } else { ?>
-                            <input type="text" name="category" id="category" value="<?php echo $data['category_name'] ?>" class="form-control">
+                            <select name="category" id="" class="form-control">
+                                <?php foreach ($categories as $category) { ?>
+                                    <option value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
+                                <?php } ?>
+                            </select>
                         <?php } ?>
                     </div>
                 </div>
