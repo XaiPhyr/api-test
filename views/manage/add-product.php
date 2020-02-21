@@ -31,19 +31,11 @@ $categories = $api->get_categories();
 
                     <div class="form-group col-3 col-md-3">
                         <label for="">Category</label>
-                        <?php if (empty($id)) { ?>
-                            <select name="category" id="" class="form-control">
-                                <?php foreach ($categories as $category) { ?>
-                                    <option value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
-                                <?php } ?>
-                            </select>
-                        <?php } else { ?>
-                            <select name="category" id="" class="form-control">
-                                <?php foreach ($categories as $category) { ?>
-                                    <option value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
-                                <?php } ?>
-                            </select>
-                        <?php } ?>
+                        <select name="category" id="" class="form-control">
+                            <?php foreach ($categories as $category) { ?>
+                                <option value="<?php echo $category['id'] ?>" <?php if ($category['id'] == $data['category_id']) echo "selected" ?>><?php echo $category['name'] ?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                 </div>
 
