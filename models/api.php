@@ -28,6 +28,13 @@ class APIModel
         $data = json_decode($json, true);
         return $data['records'];
     }
+
+    function search($keyword)
+    {
+        $json = file_get_contents('http://rdapi.herokuapp.com/product/search.php?s=' . $keyword);
+        $data = json_decode($json, true);
+        return $data['records'];
+    }
 }
 
 $api = new APIModel;
