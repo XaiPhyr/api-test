@@ -27,11 +27,11 @@ switch ($_POST['submit']) {
 }
 
 switch ($_POST['remove']) {
-    default:
+    case 'delete':
         include("services/delete.php");
-        $id = $_POST['id'];
+        $id_del = $_POST['id'];
 
-        $delete->delete($id);
+        $delete->delete($id_del);
         header("location: index.php");
         break;
 }
