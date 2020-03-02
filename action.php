@@ -25,3 +25,13 @@ switch ($_POST['submit']) {
         header("location: index.php");
         break;
 }
+
+switch ($_POST['remove']) {
+    default:
+        include("services/delete.php");
+        $id = $_POST['id'];
+
+        $delete->delete($id);
+        header("location: index.php");
+        break;
+}

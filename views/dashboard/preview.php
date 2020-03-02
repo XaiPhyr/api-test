@@ -8,9 +8,12 @@ $data = $api->get_single_product($id);
 <div class="container col-5">
     <div class="card">
         <div class="card-header">
-            <div class="btn-group float-right" role="group">
+            <div class="float-right" role="group">
                 <button onclick="edit(<?php echo $id ?>)" class="btn btn-secondary">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <form style="display: inline-block" action="action.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $id ?>">
+                    <button name="remove" type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </div>
 
             <span class="h3"><?php echo $data['name'] ?></span>
