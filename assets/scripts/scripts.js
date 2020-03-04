@@ -1,4 +1,3 @@
-
 function preview(id) {
     window.open('?page=preview&id=' + id)
 }
