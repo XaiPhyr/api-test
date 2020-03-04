@@ -1,9 +1,6 @@
 
 function preview(id) {
-    window.open(
-        '?page=preview&id=' + id,
-        '_blank'
-    )
+    window.open('?page=preview&id=' + id)
 }
 
 function edit(id) {
