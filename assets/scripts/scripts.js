@@ -1,5 +1,5 @@
 function preview(id) {
-    window.open('?page=preview&id=' + id)
+    window.open('?page=preview&id=' + id, "_self")
 }
 
 function edit(id) {
